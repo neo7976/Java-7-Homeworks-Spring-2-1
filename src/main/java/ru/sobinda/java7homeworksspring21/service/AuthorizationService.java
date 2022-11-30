@@ -1,8 +1,8 @@
 package ru.sobinda.java7homeworksspring21.service;
 
 import org.springframework.stereotype.Service;
-import ru.sobinda.java7homeworksspring21.exceptions.InvalidCredentials;
-import ru.sobinda.java7homeworksspring21.exceptions.UnauthorizedUser;
+import ru.sobinda.java7homeworksspring21.advice.InvalidCredentials;
+import ru.sobinda.java7homeworksspring21.advice.UnauthorizedUser;
 import ru.sobinda.java7homeworksspring21.model.Authorities;
 import ru.sobinda.java7homeworksspring21.repository.UserRepository;
 
