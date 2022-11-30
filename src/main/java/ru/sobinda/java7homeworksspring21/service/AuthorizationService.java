@@ -27,8 +27,7 @@ public class AuthorizationService {
         }
         List<Authorities> userAuthorities = userRepository.getUserAuthorities(user, password);
         if (isEmpty(userAuthorities)) {
-            throw new UnauthorizedUser("Unknown user " + user);
-//            throw new RuntimeException("Unknown user " + user);
+           throw  new UnauthorizedUser("Unknown user " + user);
         }
         return userAuthorities;
     }
