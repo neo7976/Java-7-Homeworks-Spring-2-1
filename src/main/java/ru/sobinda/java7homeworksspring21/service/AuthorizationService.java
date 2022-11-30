@@ -1,11 +1,16 @@
 package ru.sobinda.java7homeworksspring21.service;
 
+import org.apache.coyote.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import ru.sobinda.java7homeworksspring21.advice.InvalidCredentials;
 import ru.sobinda.java7homeworksspring21.advice.UnauthorizedUser;
 import ru.sobinda.java7homeworksspring21.model.Authorities;
 import ru.sobinda.java7homeworksspring21.repository.UserRepository;
 
+import java.rmi.NotBoundException;
 import java.util.List;
 
 @Service
@@ -23,6 +28,7 @@ public class AuthorizationService {
         List<Authorities> userAuthorities = userRepository.getUserAuthorities(user, password);
         if (isEmpty(userAuthorities)) {
             throw new UnauthorizedUser("Unknown user " + user);
+//            throw new RuntimeException("Unknown user " + user);
         }
         return userAuthorities;
     }

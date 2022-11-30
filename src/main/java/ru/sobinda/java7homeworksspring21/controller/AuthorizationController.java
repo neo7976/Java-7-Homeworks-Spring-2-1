@@ -1,8 +1,13 @@
 package ru.sobinda.java7homeworksspring21.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.sobinda.java7homeworksspring21.advice.InvalidCredentials;
+import ru.sobinda.java7homeworksspring21.advice.UnauthorizedUser;
 import ru.sobinda.java7homeworksspring21.model.Authorities;
 import ru.sobinda.java7homeworksspring21.service.AuthorizationService;
 
