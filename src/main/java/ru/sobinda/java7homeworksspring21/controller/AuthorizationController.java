@@ -1,13 +1,8 @@
 package ru.sobinda.java7homeworksspring21.controller;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.sobinda.java7homeworksspring21.advice.InvalidCredentials;
-import ru.sobinda.java7homeworksspring21.advice.UnauthorizedUser;
 import ru.sobinda.java7homeworksspring21.model.Authorities;
 import ru.sobinda.java7homeworksspring21.service.AuthorizationService;
 
@@ -22,7 +17,7 @@ public class AuthorizationController {
     }
 
     @GetMapping("/authorize")
-    public List<Authorities> getAuthorities(@RequestParam ("user") String user, @RequestParam("password") String password) {
+    public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {
         return service.getAuthorities(user, password);
     }
 }
