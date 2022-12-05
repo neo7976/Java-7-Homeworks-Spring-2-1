@@ -11,7 +11,7 @@ public class User {
     @Size(max = 20, min = 2)
     private String user;
     @NotBlank
-    @Size(min = 8)
+    @Size(min = 8, message = "Пароль должен быть не менее 8 символов")
     private String password;
 
     public User() {
