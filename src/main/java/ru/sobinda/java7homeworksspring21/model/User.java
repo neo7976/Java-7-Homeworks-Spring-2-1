@@ -1,6 +1,5 @@
 package ru.sobinda.java7homeworksspring21.model;
 
-import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 

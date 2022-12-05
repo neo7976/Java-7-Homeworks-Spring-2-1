@@ -1,11 +1,8 @@
 package ru.sobinda.java7homeworksspring21.advice;
 
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindException;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -68,7 +65,7 @@ public class ExceptionHandlerAdvice {
                         )
                 )
                 .collect(Collectors.toList());
-        System.out.printf("[onBindExceptionviolations]:%s\n", violations.toString());
+        System.out.printf("[onBindExceptionviolations]:%s\n", violations);
         return new ValidationErrorResponse(violations);
     }
 
