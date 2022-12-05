@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import ru.sobinda.java7homeworksspring21.advice.InvalidCredentials;
 import ru.sobinda.java7homeworksspring21.advice.UnauthorizedUser;
 import ru.sobinda.java7homeworksspring21.model.Authorities;
+import ru.sobinda.java7homeworksspring21.model.User;
 import ru.sobinda.java7homeworksspring21.repository.UserRepository;
 
 import java.rmi.NotBoundException;
@@ -21,11 +22,11 @@ public class AuthorizationService {
         this.userRepository = userRepository;
     }
 
-    public List<Authorities> getAuthorities(String user, String password) {
-        if (isEmpty(user) || isEmpty(password)) {
-            throw new InvalidCredentials("User name or password is empty");
-        }
-        List<Authorities> userAuthorities = userRepository.getUserAuthorities(user, password);
+    public List<Authorities> getAuthorities(User user) {
+//        if (isEmpty(user) || isEmpty(password)) {
+//            throw new InvalidCredentials("User name or password is empty");
+//        }
+        List<Authorities> userAuthorities = userRepository.getUserAuthorities(user);
         if (isEmpty(userAuthorities)) {
            throw  new UnauthorizedUser("Unknown user " + user);
         }

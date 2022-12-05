@@ -1,9 +1,10 @@
 package ru.sobinda.java7homeworksspring21.controller;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sobinda.java7homeworksspring21.model.Authorities;
+import ru.sobinda.java7homeworksspring21.model.User;
 import ru.sobinda.java7homeworksspring21.service.AuthorizationService;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class AuthorizationController {
     }
 
     @GetMapping("/authorize")
-    public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {
-        return service.getAuthorities(user, password);
+    public List<Authorities> getAuthorities(@Validated User user) {
+        return service.getAuthorities(user);
     }
 }

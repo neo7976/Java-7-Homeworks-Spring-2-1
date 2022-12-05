@@ -22,3 +22,9 @@ GET http://localhost:8080/authorize?user=Fedua&password=
 Accept: application/json
 
 ###
+
+
+GET http://localhost:8080/authorize?user=Fedua&password=11
+Accept: application/json
+
+###

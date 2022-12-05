@@ -25,10 +25,10 @@ public class UserRepository {
         this.users = new ConcurrentHashMap<>(map);
     }
 
-    public List<Authorities> getUserAuthorities(@Validated String user, @Validated String password) {
-        User searchUser = new User(user, password);
-        if (map.containsKey(searchUser)) {
-            return map.get(searchUser);
+    public List<Authorities> getUserAuthorities(User user) {
+//        User searchUser = new User(user, password);
+        if (map.containsKey(user)) {
+            return map.get(user);
         }
         return Collections.emptyList();
     }
